@@ -62,7 +62,7 @@ npm install &>>$logfile
 
 validate $? "installing dependencies"
 
-cp /home/ec2-user/roboshop-shell/catalogue.service /etc/systemd/system/catalogue.service &>>$logfile
+cp /home/ec2-user/roboshop-shell-tf/catalogue.service /etc/systemd/system/catalogue.service &>>$logfile
 
 validate $? "copying catalogue.service"
 
@@ -78,7 +78,7 @@ systemctl start catalogue &>>$logfile
 
 validate $? "start catalogue"
 
-cp /home/ec2-user/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo &>>$logfile
+cp /home/ec2-user/roboshop-shell-tf/mongo.repo /etc/yum.repos.d/mongo.repo &>>$logfile
 
 validate $? "copying mongo.repo"
 
