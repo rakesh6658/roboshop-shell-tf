@@ -53,7 +53,7 @@ cp /home/ec2-user/roboshop-shell-tf/roboshop.conf /etc/nginx/default.d/roboshop.
 
 validate $? "copying roboshop.conf"
 
-systemctl restart nginx &>>$logfiles
+systemctl restart nginx &>>$logfile
 
 validate $? "restarting nginx"
 
