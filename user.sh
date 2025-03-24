@@ -62,7 +62,7 @@ npm install &>>$logfile
 
 validate $? "installing dependencies"
 
-cp /home/ec2-user/roboshop-shell/user.service /etc/systemd/system/user.service &>>$logfile
+cp /home/ec2-user/roboshop-shell-tf/user.service /etc/systemd/system/user.service &>>$logfile
 
 validate $? "copying user.service"
 
@@ -78,7 +78,7 @@ systemctl start user &>>$logfile
 
 validate $? "start user"
 
-cp /home/ec2-user/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo &>>$logfile
+cp /home/ec2-user/roboshop-shell-tf/mongo.repo /etc/yum.repos.d/mongo.repo &>>$logfile
 
 validate $? "copying mongo.repo"
 
@@ -86,7 +86,7 @@ dnf install mongodb-mongosh -y &>>$logfile
 
 validate $? "installing mogodb"
 
-mongosh --host 172.31.83.0 </app/schema/user.js &>>$logfile
+mongosh --host mongodb.oindevops.store </app/schema/user.js &>>$logfile
 
 validate $? "loading schema"
 
