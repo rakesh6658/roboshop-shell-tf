@@ -86,7 +86,7 @@ dnf install mongodb-mongosh -y &>>$logfile
 
 validate $? "installing mogodb"
 
-mongosh --host mongodb.oindevops.store </app/schema/user.js &>>$logfile
+mongosh --host mongodb.joindevops.store </app/schema/user.js &>>$logfile
 
 validate $? "loading schema"
 
