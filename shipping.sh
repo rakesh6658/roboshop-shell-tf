@@ -58,7 +58,7 @@ mv target/shipping-1.0.jar shipping.jar &>>$logfile
 
 validate $? "changing location shipping.jar"
 
-cp /home/ec2-user/roboshop-shell/shipping.service /etc/systemd/system/shipping.service &>>$logfile
+cp /home/ec2-user/roboshop-shell-tf/shipping.service /etc/systemd/system/shipping.service &>>$logfile
 
 validate $? "copying shipping.service"
 
@@ -78,15 +78,15 @@ dnf install mysql -y  &>>$logfile
 
 validate $? "install mysql"
 
-mysql -h 172.31.89.238 -uroot -pRoboShop@1 < /app/db/schema.sql &>>$logfile
+mysql -h mysql.joindevops.store -uroot -pRoboShop@1 < /app/db/schema.sql &>>$logfile
 
 validate $? "loading data"
 
-mysql -h 172.31.89.238 -uroot -pRoboShop@1 < /app/db/app-user.sql &>>$logfile
+mysql -h mysql.joindevops.store -uroot -pRoboShop@1 < /app/db/app-user.sql &>>$logfile
 
 validate $? "loading app data"
 
-mysql -h 172.31.89.238 -uroot -pRoboShop@1 < /app/db/master-data.sql &>>$logfile
+mysql -h mysql.joindevops.store -uroot -pRoboShop@1 < /app/db/master-data.sql &>>$logfile
 
 validate $? "loading master data"
 
